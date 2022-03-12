@@ -16,6 +16,24 @@ Once we have the fitness scores of all agents, a second generation is created by
 
 ## Specific application to the negotiation bot
 
+1. **Initialization**
+    * Choose N - the population size (even)
+    * Initialize the bots' "brains" (neural networks) with some reasonably random weights
+    * Choose a scoring and fitness function
+
+2. **Play round**
+    * Assign N bots to N/2 games
+    * At each stage make a decision (accept or not, and if not what the offer should be - see discussion point below)
+    * (Optionally), remove bots/end games early - see discussion point below
+    * At the end of the game evaluate and normalize bots' fitness
+
+3. **Evolution step**
+    * Draw a set of parents with probability according to fitness
+    * (Optional) Cross over parents' digital DNA (network weights) to create children
+    * Mutate children's digital DNA randomly (with a small probability)
+
+4. **Iterate**
+    * Repeat steps 2. and 3. until some convergence/level of fitness is achieved
 
 
 ## Decision/discussion points
@@ -26,3 +44,4 @@ Once we have the fitness scores of all agents, a second generation is created by
     - first stage: accept vs continue &mdash; binary decision
     - second stage: if continue, value of offer &mdash; continuous output (constrained)
 * Fitness function &mdash; final score/value, possibly normalized/non-linear
+* In-game elimination of poor bots
