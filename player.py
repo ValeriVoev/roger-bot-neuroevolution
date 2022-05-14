@@ -15,9 +15,12 @@ class Player:
             if self.role == "buyer" 
             else randrange(SELLERBATNA["min"], SELLERBATNA["max"])
         )
-        self.zopa_min = BUYERBATNA["min"] if self.role == "buyer" else SELLERBATNA["min"]
-        self.zopa_max = BUYERBATNA["max"] if self.role == "buyer" else SELLERBATNA["max"]
+        # self.zopa_min = BUYERBATNA["min"] if self.role == "buyer" else SELLERBATNA["min"]
+        # self.zopa_max = BUYERBATNA["max"] if self.role == "buyer" else SELLERBATNA["max"]
         
+    # Calculates ORA, RS, etc   
+    def calculate_assumptions(self):
+        pass
 
     def calculate_no_deal(self):
         if self.role == "seller":
