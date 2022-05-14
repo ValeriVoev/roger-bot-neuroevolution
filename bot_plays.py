@@ -9,9 +9,6 @@ simple_bot = Bot(brain = simple_brain)
 
 smart_bot.brain.network.load_state_dict(torch.load("bots/best_bot_weights.pth"))
 
-print(smart_bot.brain.network.state_dict())
-
-
 #play(player="bot", bot=bot, verbose=True)
 
 n_games = 1
